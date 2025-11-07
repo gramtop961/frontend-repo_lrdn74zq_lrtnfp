@@ -1,55 +1,46 @@
-import { Phone, Calendar, Navigation2, CheckCircle2 } from "lucide-react";
+import React from 'react';
+
+const steps = [
+  {
+    num: '01',
+    title: 'Book in Seconds',
+    desc: 'Tell us the pickup, drop-off, and timing — we confirm right away.'
+  },
+  {
+    num: '02',
+    title: 'We Collect & Update',
+    desc: 'Real-time updates so you always know what’s happening.'
+  },
+  {
+    num: '03',
+    title: 'Delivered with Care',
+    desc: 'Friendly, verified drivers who know the Stanger routes.'
+  }
+];
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-emerald-50/40">
+    <section className="relative bg-[#0B0B0C] py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-12 grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900">How it works</h2>
-            <p className="mt-3 text-gray-600">
-              Simple steps tailored for busy families. We keep communication clear and
-              timings reliable.
-            </p>
-            <ul className="mt-6 space-y-4 text-gray-700">
-              <li className="flex items-start gap-3">
-                <Phone className="mt-1 h-5 w-5 text-emerald-600" />
-                <span><strong>1) Message or call:</strong> Tell us what you need picked up and where it’s going.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Calendar className="mt-1 h-5 w-5 text-emerald-600" />
-                <span><strong>2) Choose a window:</strong> Pick a same-day or scheduled time that suits you.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Navigation2 className="mt-1 h-5 w-5 text-emerald-600" />
-                <span><strong>3) Live updates:</strong> We confirm collection and share ETA along the way.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-5 w-5 text-emerald-600" />
-                <span><strong>4) Drop-off done:</strong> A friendly handover and proof of delivery.</span>
-              </li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl bg-emerald-50 p-4">
-                <p className="text-sm text-emerald-700">Coverage</p>
-                <p className="text-2xl font-bold text-emerald-900">Stanger +15km</p>
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-white md:text-4xl">How It Works</h2>
+          <p className="mt-3 text-zinc-400">Simple, transparent, and built for everyday life.</p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {steps.map((s) => (
+            <div
+              key={s.num}
+              className="relative overflow-hidden rounded-xl border border-zinc-800/90 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 shadow-xl"
+            >
+              <div className="text-6xl font-black tracking-tighter text-transparent opacity-20" style={{ WebkitTextStroke: '1px #d4a10055' }}>
+                {s.num}
               </div>
-              <div className="rounded-xl bg-emerald-50 p-4">
-                <p className="text-sm text-emerald-700">Average pickup</p>
-                <p className="text-2xl font-bold text-emerald-900">under 60 min</p>
-              </div>
-              <div className="rounded-xl bg-emerald-50 p-4">
-                <p className="text-sm text-emerald-700">Communication</p>
-                <p className="text-2xl font-bold text-emerald-900">WhatsApp/SMS</p>
-              </div>
-              <div className="rounded-xl bg-emerald-50 p-4">
-                <p className="text-sm text-emerald-700">Safety</p>
-                <p className="text-2xl font-bold text-emerald-900">Verified drivers</p>
-              </div>
+              <h3 className="mt-4 text-xl font-semibold text-white">{s.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-zinc-400">{s.desc}</p>
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-white/5" />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

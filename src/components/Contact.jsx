@@ -1,44 +1,54 @@
-import { PhoneCall, Mail, MessageSquare } from "lucide-react";
+import React from 'react';
+import { Phone, Mail, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="relative bg-[#0E0E10] py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Book a pickup</h2>
-          <p className="mt-3 text-gray-600">We’d love to help with your next errand.</p>
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-white md:text-4xl">Get in Touch</h2>
+          <p className="mt-3 text-zinc-400">Ready to book or have a question? Reach us any way you like.</p>
         </div>
-        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <a
-            href="tel:+27720000000"
-            className="flex flex-col items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-center shadow-sm hover:bg-gray-100"
+            href="tel:+27000000000"
+            className="group flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-6 text-white transition hover:border-amber-400/40 hover:shadow-amber-500/10"
           >
-            <PhoneCall className="h-6 w-6 text-emerald-600" />
-            <span className="font-medium text-gray-900">Call</span>
-            <span className="text-sm text-gray-600">+27 72 000 0000</span>
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300 ring-1 ring-amber-400/20">
+              <Phone size={22} />
+            </span>
+            <div>
+              <div className="font-semibold">Call Us</div>
+              <div className="text-sm text-zinc-400">Mon–Sat, 8am–6pm</div>
+            </div>
           </a>
           <a
-            href="mailto:hello@stangerdeliveries.co.za"
-            className="flex flex-col items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-center shadow-sm hover:bg-gray-100"
+            href="mailto:hello@example.com"
+            className="group flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-6 text-white transition hover:border-amber-400/40 hover:shadow-amber-500/10"
           >
-            <Mail className="h-6 w-6 text-emerald-600" />
-            <span className="font-medium text-gray-900">Email</span>
-            <span className="text-sm text-gray-600">hello@stangerdeliveries.co.za</span>
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300 ring-1 ring-amber-400/20">
+              <Mail size={22} />
+            </span>
+            <div>
+              <div className="font-semibold">Email</div>
+              <div className="text-sm text-zinc-400">We reply within an hour</div>
+            </div>
           </a>
           <a
-            href="https://wa.me/27720000000"
+            href="https://wa.me/0000000000"
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-6 text-center shadow-sm hover:bg-gray-100"
+            rel="noreferrer"
+            className="group flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-6 text-white transition hover:border-amber-400/40 hover:shadow-amber-500/10"
           >
-            <MessageSquare className="h-6 w-6 text-emerald-600" />
-            <span className="font-medium text-gray-900">WhatsApp</span>
-            <span className="text-sm text-gray-600">Chat now</span>
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300 ring-1 ring-amber-400/20">
+              <MessageSquare size={22} />
+            </span>
+            <div>
+              <div className="font-semibold">WhatsApp</div>
+              <div className="text-sm text-zinc-400">Instant chat for quick bookings</div>
+            </div>
           </a>
         </div>
-        <p className="mt-8 text-center text-xs text-gray-500">
-          Operating in Stanger, KwaDukuza and surrounding suburbs. Business hours: Mon–Sat, 7am–7pm.
-        </p>
       </div>
     </section>
   );

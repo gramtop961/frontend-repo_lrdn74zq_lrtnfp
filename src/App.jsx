@@ -1,26 +1,41 @@
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import HowItWorks from "./components/HowItWorks";
-import Contact from "./components/Contact";
+import React from 'react';
+import { Rocket, MapPin } from 'lucide-react';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import HowItWorks from './components/HowItWorks';
+import Contact from './components/Contact';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <header className="sticky top-0 z-20 border-b border-emerald-100 bg-white/80 backdrop-blur">
+    <div className="min-h-screen bg-[#0A0A0B] text-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-black/50 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="text-lg font-bold text-emerald-700">
-            Stanger Small Route Delivery
+          <a href="#home" className="flex items-center gap-2 text-white">
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-amber-400 to-yellow-500 text-black shadow">
+              <Rocket size={18} />
+            </div>
+            <div className="leading-tight">
+              <div className="text-sm font-bold">Stanger Swift</div>
+              <div className="flex items-center gap-1 text-[11px] text-zinc-400">
+                <MapPin size={12} /> Stanger, SA
+              </div>
+            </div>
           </a>
-          <nav className="hidden gap-6 text-sm font-medium text-gray-700 sm:flex">
-            <a href="#services" className="hover:text-emerald-700">Services</a>
-            <a href="#contact" className="hover:text-emerald-700">Contact</a>
+          <nav className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
+            <a href="#services" className="transition hover:text-white">Services</a>
+            <a href="#contact" className="transition hover:text-white">Contact</a>
+            <a
+              href="#contact"
+              className="rounded-md bg-gradient-to-r from-amber-400 to-yellow-500 px-4 py-2 font-medium text-black shadow hover:brightness-110"
+            >
+              Book Now
+            </a>
           </nav>
-          <a href="#contact" className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-emerald-700">
-            Book Now
-          </a>
         </div>
       </header>
 
+      {/* Sections */}
       <main>
         <Hero />
         <Services />
@@ -28,18 +43,16 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="border-t border-gray-200 bg-white py-8">
-        <div className="mx-auto max-w-7xl px-6 text-sm text-gray-600">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p>
-              © {new Date().getFullYear()} Stanger Small Route Delivery. All rights reserved.
-            </p>
-            <p>Made with care for families in Stanger, South Africa.</p>
+      {/* Footer */}
+      <footer className="border-t border-zinc-800/80 bg-black/60">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-zinc-400 md:flex-row">
+          <div>© {new Date().getFullYear()} Stanger Swift. All rights reserved.</div>
+          <div className="flex items-center gap-6">
+            <a href="#services" className="hover:text-white">Services</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
-export default App;
